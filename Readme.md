@@ -59,6 +59,7 @@ $factory = new StatsdDataFactory('\Liuggio\StatsdClient\Entity\StatsdData');
 $data[] = $factory->timing('usageTime', 100);
 $data[] = $factory->increment('visitor');
 $data[] = $factory->decrement('click');
+$data[] = $factory->updateCount('click', 10); // increment by 10
 $data[] = $factory->gauge('gaugor', 333);
 $data[] = $factory->set('uniques', 765);
 
@@ -95,7 +96,7 @@ the output will be:  `prefix.my_logger.INFO.My-logger:1|c" 36 Bytes`
 
 ## Short Theory
 
-### Easily Install StatSD and Graphite
+### Easily Install StatsD and Graphite
 
 In order to try this application monitor you have to install etsy/statsd and Graphite
 
